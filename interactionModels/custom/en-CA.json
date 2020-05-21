@@ -1,0 +1,233 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "animal therapy",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "cancel"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "exit"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CatIntent",
+          "slots": [
+            {
+              "name": "catbreed",
+              "type": "catBreed"
+            }
+          ],
+          "samples": [
+            "I love cats",
+            "I like cats",
+            "My favourite animal is a cat",
+            "cat person",
+            "I\u0027m a cat person"
+          ]
+        },
+        {
+          "name": "DogIntent",
+          "slots": [
+            {
+              "name": "dogbreed",
+              "type": "dogBreed"
+            }
+          ],
+          "samples": [
+            "I love dogs",
+            "My favourite animal is a dog",
+            "I like dogs",
+            "dog person",
+            "I\u0027m a dog person"
+          ]
+        },
+        {
+          "name": "ContinueIntent",
+          "slots": [],
+          "samples": [
+            "continue"
+          ]
+        },
+        {
+          "name": "ChangeIntent",
+          "slots": [],
+          "samples": [
+            "change"
+          ]
+        },
+        {
+          "name": "DummyIntent",
+          "slots": [
+            {
+              "name": "dummySlot",
+              "type": "AMAZON.Airline",
+              "samples": [
+                "dummy"
+              ]
+            }
+          ],
+          "samples": [
+            "I am a dummy intent"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "British Shorthair"
+              }
+            },
+            {
+              "name": {
+                "value": "random"
+              }
+            },
+            {
+              "id": "ragd",
+              "name": {
+                "value": "Ragdoll",
+                "synonyms": [
+                  "Rag doll"
+                ]
+              }
+            },
+            {
+              "id": "siam",
+              "name": {
+                "value": "Siamese",
+                "synonyms": [
+                  "Thai Cat",
+                  "Siam"
+                ]
+              }
+            },
+            {
+              "id": "abys",
+              "name": {
+                "value": "Abyssinian"
+              }
+            }
+          ],
+          "name": "catBreed"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "German Shepherd",
+                "synonyms": [
+                  "German dog"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "random",
+                "synonyms": [
+                  "any"
+                ]
+              }
+            },
+            {
+              "id": "corg",
+              "name": {
+                "value": "corgi"
+              }
+            }
+          ],
+          "name": "dogBreed"
+        }
+      ],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "DogIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "dogbreed",
+              "type": "dogBreed",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "DummyIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "dummySlot",
+              "type": "AMAZON.Airline",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.177200292364.1584425769340"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.722274014330.165382366213",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "GIBBERISH"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1403003229802.458035978761",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "this is a dummy intent"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.177200292364.1584425769340",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "DUMMY"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "18"
+}
